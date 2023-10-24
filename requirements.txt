@@ -1,3 +1,5 @@
 rdflib
 pypandoc
 pandoc
+diagrams
+graphviz

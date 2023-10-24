@@ -1,0 +1,28 @@
+digraph diagram {
+	graph [rankdir=LR]
+	subgraph legend {
+		color=lightgrey style=filled
+		label=Legend
+		class [label=Class color=black fillcolor=yellow fontcolor=black shape=box style=filled]
+		class_restriction [label="Class Restriction" color=black fillcolor=lightyellow fontcolor=black shape=box style=filled]
+		datatype [label=Datatype color=black fillcolor=lightgreen fontcolor=black shape=parallelogram style=filled]
+		object_property [label="Object Property" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		concept [label=Concept color=black fillcolor=grey fontcolor=black shape=box style=filled]
+	}
+	subgraph ontology {
+		color=lightgrey style=filled
+		label=Ontology
+		"https://open-vocabularies.vliz.be/dmbonassistant#crateRepo" [label="https://open-vocabularies.vliz.be/dmbonassistant#crateRepo" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#SpaceUrl" [label="https://open-vocabularies.vliz.be/dmbonassistant#SpaceUrl" color=black fillcolor=grey fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#SeedCrate" [label="https://open-vocabularies.vliz.be/dmbonassistant#SeedCrate" color=black fillcolor=grey fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#hasSeedCrate" [label="https://open-vocabularies.vliz.be/dmbonassistant#hasSeedCrate" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#CrateRepo" [label="https://open-vocabularies.vliz.be/dmbonassistant#CrateRepo" color=black fillcolor=grey fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#SemUpliftFile" [label="https://open-vocabularies.vliz.be/dmbonassistant#SemUpliftFile" color=black fillcolor=grey fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#hasSemUpliftFile" [label="https://open-vocabularies.vliz.be/dmbonassistant#hasSemUpliftFile" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#hasSpace" [label="https://open-vocabularies.vliz.be/dmbonassistant#hasSpace" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#ShaclFile" [label="https://open-vocabularies.vliz.be/dmbonassistant#ShaclFile" color=black fillcolor=grey fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#hasCrateRepo" [label="https://open-vocabularies.vliz.be/dmbonassistant#hasCrateRepo" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#hasShaclFile" [label="https://open-vocabularies.vliz.be/dmbonassistant#hasShaclFile" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+		"https://open-vocabularies.vliz.be/dmbonassistant#semBenchConfigPath" [label="https://open-vocabularies.vliz.be/dmbonassistant#semBenchConfigPath" color=black fillcolor=lightblue fontcolor=black shape=box style=filled]
+	}
+}

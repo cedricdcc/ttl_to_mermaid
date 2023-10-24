@@ -1,0 +1,22 @@
+2023-10-24 14:07:58,468 - src.models.diagram - INFO - Diagram class instantiated
+2023-10-24 14:07:58,468 - src.models.diagram - INFO - Making diagram
+2023-10-24 14:07:58,469 - src.models.diagram - INFO - Making legend
+2023-10-24 14:07:58,469 - src.models.diagram - INFO - Making ontology
+2023-10-24 14:07:58,470 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,470 - src.models.diagram - DEBUG - Object: http://www.w3.org/2004/02/skos/core#Concept
+2023-10-24 14:07:58,471 - src.models.diagram - DEBUG - Object: http://www.w3.org/2004/02/skos/core#Concept
+2023-10-24 14:07:58,472 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,473 - src.models.diagram - DEBUG - Object: http://www.w3.org/2004/02/skos/core#Concept
+2023-10-24 14:07:58,473 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#Ontology
+2023-10-24 14:07:58,473 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#Ontology is not a class, datatype, object property, or concept
+2023-10-24 14:07:58,473 - src.models.diagram - DEBUG - Object: http://schema.org/Organization
+2023-10-24 14:07:58,475 - src.models.diagram - DEBUG - Object: http://schema.org/Organization is not a class, datatype, object property, or concept
+2023-10-24 14:07:58,475 - src.models.diagram - DEBUG - Object: http://www.w3.org/2004/02/skos/core#Concept
+2023-10-24 14:07:58,475 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,476 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,476 - src.models.diagram - DEBUG - Object: http://www.w3.org/2004/02/skos/core#Concept
+2023-10-24 14:07:58,476 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,476 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,476 - src.models.diagram - DEBUG - Object: http://www.w3.org/2002/07/owl#ObjectProperty
+2023-10-24 14:07:58,477 - src.models.diagram - INFO - Viewing diagram
+2023-10-24 14:07:58,919 - src.models.diagram - INFO - Saving diagram
