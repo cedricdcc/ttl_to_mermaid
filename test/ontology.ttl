@@ -1,0 +1,158 @@
+@prefix ro: <https://w3id.org/ro/crate/1.0/context#> .
+@prefix da: <https://open-vocabularies.vliz.be/dmbonassistant#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+
+
+<https://open-vocabularies.vliz.be/dmbonassistant>
+    a owl:Ontology;
+    rdfs:label       "dmbon-assistant-ontology"@en ;
+    rdfs:comment     "The DMBON Assistant ontology"@en ;
+    dc:issued        "2022-05-06"^^xsd:date ;
+    dc:modified      "2022-06-22"^^xsd:date ;
+    dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
+    dc:creator
+    [
+        schema:name         "VLIZ Open Science team" ;
+        schema:email        <mailto:opsci@vliz.org> ;
+	      schema:affiliation  <https://www.vliz.be/> ;
+    ] ;
+    dc:contributor
+    [
+        schema:name         "Laurian Van Maldeghem" ;
+        schema:identifier   <https://orcid.org/0000-0003-0663-5907> ;
+        schema:email        <mailto:laurian.van.maldeghem@vliz.be> ;
+        schema:affiliation  <https://www.vliz.be/> ;
+    ],
+    [
+        schema:name         "Marc Portier" ;
+        schema:identifier   <https://orcid.org/0000-0002-9648-6484> ;
+        schema:email        <mailto:marc.portier@vliz.be> ;
+        schema:affiliation  <https://www.vliz.be/> ;
+    ],
+    [
+        schema:name         "Cedric Decruw" ;
+        schema:identifier   <https://orcid.org/0000-0001-6387-5988> ;
+        schema:email        <mailto:cedric.decruw@vliz.be> ;
+        schema:affiliation  <https://www.vliz.be/> ;
+    ] ;
+    vann:preferredNamespacePrefix "da" ;
+    vann:preferredNamespaceUri    "https://open-vocabularies.vliz.be/dmbonassistant#" .
+
+
+<https://www.vliz.be/>
+  a schema:Organization ;
+  schema:name   "Vlaams Instituut voor de Zee"@nl ;
+  schema:name   "Flanders Marine Institute"@en ;
+  schema:url    <https://www.vliz.be/> .
+
+
+### classes ###
+
+da:SeedCrate
+  a                     skos:Concept ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          """A seed-RO-Crate is a kind of template/empty data-package containing structure and files to be filled in.
+  The cloning of the seed-crate marks the beginning of the management of a specific data-RO-Crate."""@en ;
+  rdfs:label            "Seed RO-Crate"@en ;
+  rdfs:subclassof	      ro:CreativeWork .
+
+da:CrateRepo
+  a                     skos:Concept ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "The access-string to the (public) file repository holding the version managed source data files of the RO-Crate datapackage."@en ;
+  rdfs:label            "RO-Crate repository"@en ;
+  rdfs:subclassof	      ro:RepositoryObject .
+# to check with Cedric if this is correct... --> atm points to collection class, while the expected value should be a url??
+# in fact - a git-connect-string is technically not a URL - since it does not start with http(s)://
+
+da:SpaceUrl
+  a                     skos:Concept ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "The link to the Space of the RO-Crate."@en ;
+  rdfs:label            "RO-Crate Space URL"@en ;
+  rdfs:subclassof	      ro:URL .
+
+da:ShaclFile
+  a                     skos:Concept ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "The SHACL file with the contrains to which the RO-Crate data is/should be conformant."@en ;
+  rdfs:label            "RO-Crate SHACL file"@en ;
+  rdfs:subclassof	      ro:File .
+
+da:SemUpliftFile
+  a                     skos:Concept ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "The PySUByT templates files used to semantically uplift the RO-Crate."@en ;
+  rdfs:label            "RO-Crate semantic uplifting file(s)"@en ;
+  rdfs:subclassof	      ro:File .
+
+
+### predicates ###
+
+da:crateRepo
+  a 			owl:ObjectProperty ; 
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates a RO-Crate repo."@en ;
+  rdfs:label            "RO-Crate repo"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:SeedCrate .
+
+da:semBenchConfigPath
+  a 			owl:ObjectProperty ; 
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "A configuration file for semantic workbench actions"@en ;
+  rdfs:label            "sembench config file"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:SeedCrate .
+
+da:hasSeedCrate
+  a                     owl:ObjectProperty ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates the seed RO-Crate, which is the RO-Crate used as a template to start and manage datapackages conforming to this RO-Profile-Crate."@en ;
+  rdfs:label            "Has seed RO-Crate"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:SeedCrate .
+
+
+da:hasCrateRepo
+  a                     owl:ObjectProperty ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates the GitHub repository of the RO-Crate."@en ;
+  rdfs:label            "Has RO-Crate repository"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:CrateRepo .
+
+
+da:hasSpace
+  a                     owl:ObjectProperty ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates the DM BON assistant 'Space' of the RO-Crate."@en ;
+  rdfs:label            "Has Space"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:SpaceUrl .
+
+
+da:hasShaclFile
+  a                     owl:ObjectProperty ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates the shacl constrains that are applied to the RO-Crate."@en ;
+  rdfs:label            "Has Shacl constrains"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:ShaclFile .
+
+
+da:hasSemUpliftFile
+  a                     owl:ObjectProperty ;
+  rdfs:isDefinedBy      <https://open-vocabularies.vliz.be/dmbonassistant>;
+  rdfs:comment          "Indicates the PySUByT template(s) used to semantically uplift the data within the RO-Crate."@en ;
+  rdfs:label            "Has uplifting templates"@en ;
+  rdfs:domain           ro:CreativeWork ;
+  rdfs:range            da:SemUpliftFile .
